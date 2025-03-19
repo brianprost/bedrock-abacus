@@ -1,6 +1,7 @@
 {
 	"name": "@brianprost/bedrock-abacus",
 	"version": "0.0.1",
+	"license": "MIT",
 	"exports": "./mod.ts",
 	"tasks": {
 		"dev": "deno run --watch main.ts"
