@@ -1,14 +1,14 @@
 /**
  * @module mod
- * @description Entry point for the Bedrock Abacus library, providing token counting and pricing calculations for AWS Bedrock models.
+ * @description Entry point for the Bedrock Abacus library, providing token counting and pricing calculations for Amazon Bedrock models.
  */
 
 import { MODELS, PRICING } from "./src/models.ts";
 import type { CommandInput, Pricing, Result } from "./src/types.ts";
 
 /**
- * @exports MODELS - Available model identifiers for AWS Bedrock
- * @exports PRICING - Pricing information for AWS Bedrock models
+ * @exports MODELS - Available model identifiers for Amazon Bedrock
+ * @exports PRICING - Pricing information for Amazon Bedrock models
  */
 export { MODELS, PRICING };
 

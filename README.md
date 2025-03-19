@@ -1,13 +1,13 @@
 # Bedrock Abacus
 
-A TypeScript utility for calculating token counts and pricing for AWS Bedrock models.
+A TypeScript utility for calculating token counts and pricing for Amazon Bedrock models.
 
 > **Note:** Pricing is as of [2025-03-19](https://aws.amazon.com/bedrock/pricing/)
 
 ## Features
 
 - Calculate token counts for text input
-- Calculate pricing for AWS Bedrock models
+- Calculate pricing for Amazon Bedrock models
 - Support for both standard and batch pricing
 - Support for popular models including:
   - Claude 3.* Sonnet
@@ -66,7 +66,7 @@ console.log(`Token count: ${count}`);
 
 ### Available Models
 
-The library includes all current AWS Bedrock models with their IDs and pricing:
+The library includes all current Amazon Bedrock models with their IDs and pricing:
 
 ```ts
 import { MODELS, PRICING } from "bedrock-abacus";

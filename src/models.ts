@@ -1,11 +1,11 @@
 /**
  * @module models
- * @description Model information and pricing for AWS Bedrock models
+ * @description Model information and pricing for Amazon Bedrock models
  */
 
 /**
- * Mapping of model names to their AWS Bedrock model IDs
- * 
+ * Mapping of model names to their Amazon Bedrock model IDs
+ *
  * @constant
  * @type {Object.<string, string>}
  */
@@ -22,7 +22,7 @@ export const MODELS = {
 /**
  * Pricing information for each model
  * Contains input and output prices per 1000 tokens for both standard and batch pricing
- * 
+ *
  * @constant
  * @type {Object.<string, {standard: {input: number, output: number}, batch: {input: number, output: number}}>}
  */
