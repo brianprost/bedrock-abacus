@@ -1,3 +1,14 @@
+/**
+ * @module models
+ * @description Model information and pricing for AWS Bedrock models
+ */
+
+/**
+ * Mapping of model names to their AWS Bedrock model IDs
+ * 
+ * @constant
+ * @type {Object.<string, string>}
+ */
 export const MODELS = {
 	"Claude 3.5 Sonnet": "us.anthropic.claude-3-5-sonnet-20241022-v2:0",
 	"Claude 3.5 Haiku": "us.anthropic.claude-3-5-haiku-20241022-v1:0",
@@ -8,6 +19,13 @@ export const MODELS = {
 	"Amazon Nova Lite": "us.amazon.nova-lite-v1:0",
 } as const;
 
+/**
+ * Pricing information for each model
+ * Contains input and output prices per 1000 tokens for both standard and batch pricing
+ * 
+ * @constant
+ * @type {Object.<string, {standard: {input: number, output: number}, batch: {input: number, output: number}}>}
+ */
 export const PRICING = {
 	"Claude 3.5 Sonnet": {
 		standard: { input: 0.003, output: 0.015 },
