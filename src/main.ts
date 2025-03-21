@@ -74,3 +74,5 @@ export function countTokens(text: string): number {
 function findModelNameById(modelId: string): string | undefined {
 	return Object.entries(MODELS).find(([_, id]) => id === modelId)?.[0];
 }
+
+export { tokenize } from "./tokenize.ts";
