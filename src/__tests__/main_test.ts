@@ -1,5 +1,8 @@
 import { assertEquals, assertThrows } from "@std/assert";
-import { calculate, countTokens, MODELS } from "../main.ts";
+import { calculate, countTokens } from "../main.ts";
+import { MODELS } from "../models.ts";
+import { tokenize } from "../tokenize.ts";
+import { validate } from "@std/uuid/unstable-v7";
 
 Deno.test("countTokens correctly counts tokens in a string", () => {
 	assertEquals(countTokens("Hello, world!"), 4);
@@ -119,4 +122,19 @@ Deno.test("calculate handles large token counts without precision issues", () =>
 	assertEquals(result.tokenCount, 1_000_000);
 	assertEquals(result.pricing.pricing.input, (1_000_000 / 1000) * 0.0008);
 	assertEquals(result.pricing.pricing.output, (1_000_000 / 1000) * 0.004);
+});
+
+Deno.test("tokenize correctly tokenizes a string", () => {
+	const tokens = tokenize("Hello, world!");
+
+	assertEquals(tokens.length, 4);
+	assertEquals(tokens[0].text, "Hello");
+	assertEquals(tokens[1].text, ",");
+	assertEquals(tokens[2].text, " world");
+	assertEquals(tokens[3].text, "!");
+
+	// Validate UUIDs
+	for (const token of tokens) {
+		assertEquals(validate(token.id), true);
+	}
 });

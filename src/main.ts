@@ -9,7 +9,7 @@ import type { CommandInput, Pricing, Result } from "./types.ts";
 
 /**
  * Calculate token count and pricing for a given text and model
- * 
+ *
  * @param {CommandInput} input - The input configuration containing text or token count and model options
  * @returns {Result} Token count and pricing information
  * @throws {Error} When neither text nor tokenCount is provided
