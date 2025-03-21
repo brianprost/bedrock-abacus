@@ -4,7 +4,7 @@
  */
 
 import { MODELS, PRICING } from "./src/models.ts";
-import type { CommandInput, Pricing, Result } from "./src/types.ts";
+import type { CommandInput, Pricing, Result, Token } from "./src/types.ts";
 
 /**
  * @exports MODELS - Available model identifiers for Amazon Bedrock
