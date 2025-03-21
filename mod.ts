@@ -5,12 +5,14 @@
 
 import { MODELS, PRICING } from "./src/models.ts";
 import type { CommandInput, Pricing, Result, Token } from "./src/types.ts";
+import { tokenize } from "./src/tokenize.ts";
 
 /**
  * @exports MODELS - Available model identifiers for Amazon Bedrock
  * @exports PRICING - Pricing information for Amazon Bedrock models
+ * @exports tokenize - Tokenize a string of text
  */
-export { MODELS, PRICING };
+export { MODELS, PRICING, tokenize };
 
 /**
  * @exports CommandInput - Input configuration for pricing calculations
