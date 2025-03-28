@@ -38,8 +38,14 @@ export type Pricing = {
 	modelName: string;
 	modelId: string;
 	pricing: {
-		input: number;
-		output: number;
+		standard: {
+			input: number;
+			output: number;
+		};
+		batch: {
+			input: number;
+			output: number;
+		};
 	};
 };
 
@@ -67,7 +73,7 @@ export type ModelName = keyof typeof MODELS;
  *
  * @typedef {typeof MODELS[ModelName]} ModelId
  */
-export type ModelId = typeof MODELS[ModelName];
+export type ModelId = (typeof MODELS)[ModelName];
 
 /**
  * Represents a token with an ID, text, token ID, and color.

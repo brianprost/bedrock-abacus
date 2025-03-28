@@ -10,7 +10,8 @@
  * @type {Object.<string, string>}
  */
 export const MODELS = {
-	"Claude 3.5 Sonnet": "us.anthropic.claude-3-5-sonnet-20241022-v2:0",
+	"Claude 3.5 Sonnet v2": "us.anthropic.claude-3-5-sonnet-20241022-v2:0",
+	"Claude 3.5 Sonnet": "us.anthropic.claude-3-5-sonnet-20240620-v1:0",
 	"Claude 3.5 Haiku": "us.anthropic.claude-3-5-haiku-20241022-v1:0",
 	"Claude 3 Opus": "us.anthropic.claude-3-opus-20240229-v1:0",
 	"Llama3.3 70B": "us.meta.llama3-3-70b-instruct-v1:0",
@@ -27,6 +28,10 @@ export const MODELS = {
  * @type {Object.<string, {standard: {input: number, output: number}, batch: {input: number, output: number}}>}
  */
 export const PRICING = {
+	"Claude 3.5 Sonnet v2": {
+		standard: { input: 0.003, output: 0.015 },
+		batch: { input: 0.0015, output: 0.0075 },
+	},
 	"Claude 3.5 Sonnet": {
 		standard: { input: 0.003, output: 0.015 },
 		batch: { input: 0.0015, output: 0.0075 },

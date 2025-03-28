@@ -14,7 +14,7 @@ import { calculate } from "./src/main.ts";
  * @exports tokenize - Tokenize a string of text
  * @exports calculate - Calculate token count and pricing for a given text and model
  */
-export { MODELS, PRICING, tokenize, calculate };
+export { calculate, MODELS, PRICING, tokenize };
 
 /**
  * @exports CommandInput - Input configuration for pricing calculations
