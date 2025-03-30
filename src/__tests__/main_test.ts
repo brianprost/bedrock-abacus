@@ -21,8 +21,8 @@ Deno.test("calculate works with text input for Claude 3.5 Sonnet", () => {
 	assertEquals(result.tokenCount, 4);
 	assertEquals(result.pricing.modelName, "Claude 3.5 Sonnet");
 	assertEquals(result.pricing.modelId, MODELS["Claude 3.5 Sonnet"]);
-	assertEquals(result.pricing.pricing.standard.input, (4 / 1000) * 0.003);
-	assertEquals(result.pricing.pricing.standard.output, (4 / 1000) * 0.015);
+	assertEquals(result.pricing.standard.input, (4 / 1000) * 0.003);
+	assertEquals(result.pricing.standard.output, (4 / 1000) * 0.015);
 });
 
 Deno.test("calculate works with tokenCount input for Llama3.2 11B", () => {
@@ -36,8 +36,8 @@ Deno.test("calculate works with tokenCount input for Llama3.2 11B", () => {
 	assertEquals(result.tokenCount, 1000);
 	assertEquals(result.pricing.modelName, "Llama3.2 11B");
 	assertEquals(result.pricing.modelId, MODELS["Llama3.2 11B"]);
-	assertEquals(result.pricing.pricing.standard.input, 0.00016);
-	assertEquals(result.pricing.pricing.standard.output, 0.00016);
+	assertEquals(result.pricing.standard.input, 0.00016);
+	assertEquals(result.pricing.standard.output, 0.00016);
 });
 
 Deno.test("calculate throws error when neither text nor tokenCount is provided", () => {
@@ -79,8 +79,8 @@ Deno.test("calculate works correctly with Amazon Nova models", () => {
 
 	assertEquals(resultPro.tokenCount, 5000);
 	assertEquals(resultPro.pricing.modelName, "Amazon Nova Pro");
-	assertEquals(resultPro.pricing.pricing.standard.input, (5000 / 1000) * 0.0008);
-	assertEquals(resultPro.pricing.pricing.standard.output, (5000 / 1000) * 0.00024);
+	assertEquals(resultPro.pricing.standard.input, (5000 / 1000) * 0.0008);
+	assertEquals(resultPro.pricing.standard.output, (5000 / 1000) * 0.00024);
 
 	// Test batch pricing
 	const resultLite = calculate({
@@ -92,8 +92,8 @@ Deno.test("calculate works correctly with Amazon Nova models", () => {
 	});
 
 	assertEquals(resultLite.pricing.modelName, "Amazon Nova Lite");
-	assertEquals(resultLite.pricing.pricing.batch.input, (5000 / 1000) * 0.0002);
-	assertEquals(resultLite.pricing.pricing.batch.output, (5000 / 1000) * 0.0006);
+	assertEquals(resultLite.pricing.batch.input, (5000 / 1000) * 0.0002);
+	assertEquals(resultLite.pricing.batch.output, (5000 / 1000) * 0.0006);
 });
 
 Deno.test("calculate handles large token counts without precision issues", () => {
@@ -105,8 +105,8 @@ Deno.test("calculate handles large token counts without precision issues", () =>
 	});
 
 	assertEquals(result.tokenCount, 1_000_000);
-	assertEquals(result.pricing.pricing.standard.input, (1_000_000 / 1000) * 0.0008);
-	assertEquals(result.pricing.pricing.standard.output, (1_000_000 / 1000) * 0.004);
+	assertEquals(result.pricing.standard.input, (1_000_000 / 1000) * 0.0008);
+	assertEquals(result.pricing.standard.output, (1_000_000 / 1000) * 0.004);
 });
 
 Deno.test("tokenize correctly tokenizes a string", () => {

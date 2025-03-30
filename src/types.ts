@@ -37,15 +37,13 @@ export type CommandInput = {
 export type Pricing = {
 	modelName: string;
 	modelId: string;
-	pricing: {
-		standard: {
-			input: number;
-			output: number;
-		};
-		batch: {
-			input: number;
-			output: number;
-		};
+	standard: {
+		input: number;
+		output: number;
+	};
+	batch: {
+		input: number;
+		output: number;
 	};
 };
 

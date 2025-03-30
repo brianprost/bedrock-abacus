@@ -42,15 +42,13 @@ export function calculate(input: CommandInput): Result {
 	const pricing: Pricing = {
 		modelName,
 		modelId: input.options.modelId,
-		pricing: {
-			standard: {
-				input: (tokenCount / 1000) * modelPricing.standard.input,
-				output: (tokenCount / 1000) * modelPricing.standard.output,
-			},
-			batch: {
-				input: (tokenCount / 1000) * modelPricing.batch.input,
-				output: (tokenCount / 1000) * modelPricing.batch.output,
-			},
+		standard: {
+			input: (tokenCount / 1000) * modelPricing.standard.input,
+			output: (tokenCount / 1000) * modelPricing.standard.output,
+		},
+		batch: {
+			input: (tokenCount / 1000) * modelPricing.batch.input,
+			output: (tokenCount / 1000) * modelPricing.batch.output,
 		},
 	};
 
