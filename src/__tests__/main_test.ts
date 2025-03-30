@@ -1,5 +1,5 @@
 import { assertEquals, assertThrows } from "@std/assert";
-import { calculate, countTokens } from "../main.ts";
+import { calculate, countTokens } from "../utilities.ts";
 import { MODELS } from "../models.ts";
 import { tokenize } from "../tokenize.ts";
 import { validate } from "@std/uuid/unstable-v7";
