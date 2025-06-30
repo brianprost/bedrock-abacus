@@ -3,7 +3,7 @@
  * @description Entry point for the Bedrock Abacus library, providing token counting and pricing calculations for Amazon Bedrock models.
  */
 
-import { MODELS, PRICING } from "./models.ts";
+import { MODELS, PRICING, getModelsData } from "./models.ts";
 import type { CommandInput, Pricing, Result, Token } from "./types.ts";
 import { tokenize } from "./tokenize.ts";
 import { calculate } from "./utilities.ts";
@@ -11,10 +11,11 @@ import { calculate } from "./utilities.ts";
 /**
  * @exports MODELS - Available model identifiers for Amazon Bedrock
  * @exports PRICING - Pricing information for Amazon Bedrock models
+ * @exports getModelsData - Get fresh models and pricing data from models.dev
  * @exports tokenize - Tokenize a string of text
  * @exports calculate - Calculate token count and pricing for a given text and model
  */
-export { calculate, MODELS, PRICING, tokenize };
+export { calculate, MODELS, PRICING, getModelsData, tokenize };
 
 /**
  * @exports CommandInput - Input configuration for pricing calculations
